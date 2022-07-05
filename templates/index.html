@@ -1,0 +1,111 @@
+
+
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Machine Learning API</title>
+<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css\style.css') }}"> -->
+ <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<form action="{{ url_for('predict') }}"method="post">
+
+<div class="container register">
+                <div class="row">
+                    <div class="col-md-3 register-left">
+                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                        <h3>Welcome</h3>
+                        <p>You are 30 seconds away from Predicting!</p>
+                        <input type="submit" name="" value="Home Page"/><br/>
+                    </div>
+                    <div class="col-md-9 register-right">
+                        <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="https://techvee.live/healthify-agritech.html" role="tab" aria-controls="home" aria-selected="true">Prediction</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Results</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading">Prediction App</h3>
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+
+                                        
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="Age" placeholder="Age" required="required" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="Previously_Insured" placeholder="Previously_Insured (0:No and 1:Yes)" required="required" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="Vehicle_Damage" placeholder="Vehicle_Damage (0:No and 1:Yes)" required="required" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control"  name="Region_Code" placeholder="Region_Code  eg. 100" required="required" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="Driving_Licence" placeholder="Driving_Licence(0:No and 1:Yes)" required="required" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="Annual_Premium" placeholder="Annual_Premium eg. 1000" required="required" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="Policy_Sales_Channel" placeholder="Policy_Sales_Channel" required="required" />
+                                        </div>
+                                        <div class="form-group" >
+                                            <select class="form-control", name = "Gender">
+                                                <option class="hidden"  selected disabled>Gender</option>
+                                                <option>Male</option>
+                                                <option>Female</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <select class="form-control", name = "Vehicle_Age">
+                                                <option class="hidden"  selected disabled>Vehicle_Age</option>
+                                                <option>< 1 Year</option>
+                                                <option>1-2 Year</option>
+                                                <option>> 2 Year</option>
+
+                                            </select>
+                                        </div>
+
+
+                                        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+
+
+
+                                       </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+    </form>
+   <br>
+   <br>
+   {{ prediction_text }}
+            </div>
+
+
+
+</body>
+</html>
