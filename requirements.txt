@@ -10,4 +10,4 @@ Werkzeug==1.0.1
 Jinja2==2.11.3
 itsdangerous==1.1.0
 MarkupSafe==1.1.1
-python~= 3.8.8
+python~=3.8.8
